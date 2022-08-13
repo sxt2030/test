@@ -1,0 +1,31 @@
+git config --global user.email "maxpack2030@gmail.com"
+git config --global user.name "sxt2030"
+mkdir test
+cd test
+git init
+touch hello.txt
+git add .
+git commit -m "commit first text file"
+git remote add origin https://github.com/sxt2030/test.git
+git checkout -b develop
+git checkout -b dev1
+echo "hello, world!" > hello.txt
+git add .
+git commit -m "commit in dev branch"
+git push origin dev1
+mkdir '/c/git_clone'
+cd '/c/git_clone'
+git clone https://github.com/sxt2030/test2.git
+git checkout develop
+git checkout -b dev2
+echo "no hello to no world!" > hello.txt
+git add .
+git commit -m "commit in dev2 branch"
+git push origin dev2
+git checkout develop
+git pull origin dev1
+git merge dev2
+git diff
+git add .
+git commit -m "merget file with resolved conflict"
+git push origin develop
